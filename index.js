@@ -92,11 +92,10 @@ module.exports = function (api, options = {}) {
 
   api.addHTMLScript({
     content: `
-      fetch('${api.config.publicPath || ''}/preload.json')
+      fetch('${api.config.publicPath}preload.json')
         .then(res=>res.json())
         .then(json=>{
             const links=document.getElementsByTagName('link')
-            const scripts=document.getElementsByTagName('script')
             const firstLink = links[0]
             const hasAdd=[]
             Object.keys(json).forEach(path=>{
@@ -104,7 +103,7 @@ module.exports = function (api, options = {}) {
                 const arr=json[path]
                 arr.forEach(name=>{
                   const link = document.createElement('link')
-                  link.href = '${api.config.publicPath || ''}/'+name
+                  link.href = '${api.config.publicPath}'+name
                   link.rel='preload'
                   link.as=name.endsWith('.js')?'script':'style'
                   if(hasAdd.includes(name))return
