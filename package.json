@@ -1,0 +1,29 @@
+{
+  "name": "umi-plugin-umi-plugin-preload-pages",
+  "version": "0.0.1",
+  "description": "",
+  "authors": {
+    "name": "",
+    "email": ""
+  },
+  "repository": "/umi-plugin-preload-pages",
+  "peerDependencies": {
+    "umi": "2.x"
+  },
+  "scripts": {
+    "build": "umi-tools build",
+    "prepublishOnly": "np --no-cleanup --yolo --no-publish"
+  },
+  "devDependencies": {
+    "np": "^3.0.4",
+    "umi-tools": "^0.4.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "lodash": "^4.17.15",
+    "path-to-regexp": "^3.0.0"
+  }
+}
