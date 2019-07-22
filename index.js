@@ -90,8 +90,9 @@ module.exports = function (api, options = {}) {
     debug(`write preload file to ${target}`)
   }
 
-  api.addHTMLScript({
-    content: `
+  if(process.env.NODE_ENV=='production'){
+    api.addHTMLScript({
+      content: `
       fetch('${api.config.publicPath}preload.json')
         .then(res=>res.json())
         .then(json=>{
@@ -113,7 +114,10 @@ module.exports = function (api, options = {}) {
             })
         })
     `,
-  })
+    })
+  }
+
+
 
   api.onBuildSuccess(({ stats }) => {
     const targetStats = Array.isArray(stats.stats) ? stats.stats[0] : stats
