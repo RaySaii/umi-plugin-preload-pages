@@ -93,7 +93,7 @@ module.exports = function (api, options = {}) {
   if(process.env.NODE_ENV=='production'){
     api.addHTMLScript({
       content: `
-      fetch('${api.config.publicPath}preload.json')
+      fetch('${window.routerBase}preload.json')
         .then(res=>res.json())
         .then(json=>{
             const links=document.getElementsByTagName('link')
