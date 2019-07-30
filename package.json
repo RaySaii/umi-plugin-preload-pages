@@ -1,6 +1,6 @@
 {
   "name": "umi-plugin-preload-pages",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "authors": {
     "name": "",
@@ -11,8 +11,7 @@
     "umi": "2.x"
   },
   "scripts": {
-    "build": "umi-tools build",
-    "prepublishOnly": "np --no-cleanup --yolo --no-publish"
+    "deploy": "node ./scripts/update-version.js"
   },
   "devDependencies": {
     "np": "^3.0.4",
@@ -23,6 +22,7 @@
   ],
   "license": "MIT",
   "dependencies": {
+    "fs-extra": "^8.1.0",
     "lodash": "^4.17.15",
     "path-to-regexp": "^3.0.0"
   }
