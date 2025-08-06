@@ -11,7 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "lodash": "^4.17.15",
-    "umi": "^2.8.12"
+    "umi": "^4.4.12"
   },
   "devDependencies": {
     "umi-plugin-react": "^1.9.11"
